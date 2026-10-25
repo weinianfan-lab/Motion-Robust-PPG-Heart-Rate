@@ -1,0 +1,12 @@
+fs_hz: 64.0
+window: hann
+nperseg: 256
+noverlap: 128
+nfft: 4096
+f_min_hz: 0.5
+f_max_hz: 4.0
+detrend: constant
+scaling: density
+average: mean
+epsilon: 1.0e-12
+minimum_std: 1.0e-10

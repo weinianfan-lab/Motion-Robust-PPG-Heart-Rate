@@ -1,0 +1,19 @@
+name: Core tests
+
+on: [push, pull_request]
+
+jobs:
+  core:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.11'
+      - run: uv sync --locked --default-index https://pypi.org/simple
+      - run: uv run --locked --offline --default-index https://pypi.org/simple ruff check src scripts tests
+      - run: uv run --locked --offline --default-index https://pypi.org/simple python -c "from pathlib import Path; Path('runs').mkdir(exist_ok=True)"
+      - run: uv run --locked --offline --default-index https://pypi.org/simple pytest -q --basetemp=runs/ci-tests

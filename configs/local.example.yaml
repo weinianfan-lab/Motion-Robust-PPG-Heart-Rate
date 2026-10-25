@@ -1,0 +1,4 @@
+# Copy to ignored configs/local.yaml and supply your own paths.
+data_root: null
+cache_root: cache
+output_root: runs

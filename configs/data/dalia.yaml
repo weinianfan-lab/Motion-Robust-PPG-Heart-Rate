@@ -1,0 +1,5 @@
+# Paths are resolved from the working directory; raw data must remain outside the repository.
+# Configure a trusted official download locally or use PPG_DALIA_ROOT.
+data_root: null
+cache_root: cache
+output_root: runs

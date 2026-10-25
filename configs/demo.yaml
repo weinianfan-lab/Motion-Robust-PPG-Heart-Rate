@@ -1,0 +1,6 @@
+seed: 42
+duration_s: 32.0
+hr_bpm: 90.0
+waveform: pulse
+scenario: all
+motion_weight: 1.0
